@@ -13,10 +13,12 @@
   --font-mono: var(--font-geist-mono);
 
   --animate-progress-bar: progress-bar 3.5s linear;
+
   @keyframes progress-bar {
     0% {
       width: 0%;
     }
+
     100% {
       width: 100%
     }
@@ -38,10 +40,89 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Swiper */
-.swiper-button-prev,
-.swiper-button-next {
-  color: gray !important;
-  background-color: rgba(102, 102, 102, 0.3);
-  padding: 50px 60px;
+/* Swiper Navigation */
+@layer components {
+  :root {
+    --swiper-navigation-color: gray;
+    --swiper-navigation-size: 32px;
+    /* Defina o tamanho desejado aqui */
+  }
+}
+
+.primary-carousel .swiper-button-prev,
+.primary-carousel .swiper-button-next {
+  /* Adiciona uma transição suave para as propriedades transform e background-color */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  /* Adiciona a cor de fundo */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Fundo preto com 30% de opacidade */
+
+  /* Define as dimensões do botão para criar uma área para o fundo */
+  width: 60px;
+  height: 60px;
+
+  /* Arredonda as bordas para criar um botão circular */
+  border-radius: 50%;
+
+  /* Garante que o ícone da seta esteja perfeitamente centralizado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary-carousel .swiper-button-prev:hover,
+.primary-carousel .swiper-button-next:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Fundo preto com 60% de opacidade */
+  transform: scale(1.1);
+}
+
+/* Swiper Pagination */
+@layer components {
+
+  /*
+   * Customização das Variáveis Globais de Paginação do Swiper
+   */
+  :root {
+    /* Cor do bullet ativo */
+    --swiper-pagination-color: #007aff;
+    /* Um azul vibrante, por exemplo */
+
+    /* Cor dos bullets inativos */
+    --swiper-pagination-bullet-inactive-color: #cccccc;
+    /* Um cinza claro */
+
+    /* Opacidade dos bullets inativos (1 = totalmente opaco) */
+    --swiper-pagination-bullet-inactive-opacity: 1;
+
+    /* Tamanho dos bullets */
+    --swiper-pagination-bullet-size: 10px;
+
+    /* Espaçamento horizontal entre os bullets */
+    --swiper-pagination-bullet-horizontal-gap: 6px;
+  }
+}
+
+/*
+   * Estilização dos bullets
+   */
+.swiper-pagination-bullet {
+  /* 1. Adiciona uma transição suave para as propriedades transform e background-color */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/*
+   * 2. Aplica o efeito de escala ao passar o mouse
+   */
+.swiper-pagination-bullet:hover {
+  transform: scale(1.3);
+  /* Aumenta o tamanho do bullet em 30% */
+}
+
+/*
+   * Estilo do bullet ativo
+   */
+.swiper-pagination-bullet-active {
+  background-color: #007aff !important;
 }

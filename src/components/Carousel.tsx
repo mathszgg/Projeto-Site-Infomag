@@ -42,7 +42,7 @@ const Carousel = ({ showProgressBar = true }: Props) => {
     return (
         <div className='relative w-full h-[calc(50vh-var(--header-height))] lg:h-[calc(97vh-var(--header-height))] p-2 lg:p-0'>
             <Swiper
-                className="w-full h-full"
+                className="primary-carousel w-full h-full"
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
                 pagination={{ clickable: true }}
