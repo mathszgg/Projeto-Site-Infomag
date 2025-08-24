@@ -1,50 +1,65 @@
 "use client";
 
+// 1. Importe o Swiper e TAMBÉM o SwiperSlide aqui
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Image from 'next/image'; // Importe o Image aqui também
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Image from 'next/image';
+
 import { useRef } from 'react';
+// Não precisa mais importar o CarouselSlide
+// import CarouselSlide from './CarouselSlide'; 
+import { SlideProps } from '@/types/TypeCarouselSlides';
 
 type Props = {
-    images: string[];
     showProgressBar?: boolean;
 }
 
-const Carousel = ({ images, showProgressBar = false }: Props) => {
+const slides: SlideProps[] =
+    [
+        { id: 0, imageUrl: '/img/page/carousel/slide-cellphone.png', title: 'Manutenção em Celulares' },
+        { id: 1, imageUrl: '/img/page/carousel/slide-cftv.png', title: 'Instalação de Câmeras CFTV' },
+        { id: 2, imageUrl: '/img/page/carousel/slide-notebook.png', title: 'Manutenção em Computadores' },
+        { id: 3, imageUrl: '/img/page/carousel/slide-pdv.png', title: 'Sistemas PDV' }
+    ]
+
+
+const Carousel = ({ showProgressBar = true }: Props) => {
     const progressBarRef = useRef<HTMLDivElement>(null);
 
     const handleSlideChange = () => {
         const progressBar: HTMLDivElement | null = progressBarRef.current
         if (progressBar) {
-            // Remove classe para parar animação antiga
             progressBar.classList.remove('animate-progress-bar');
-
-            // Truque para forçar o navegador a processar a remoção
             void progressBar.offsetWidth;
-
-            // Adiciona a classe de volta para reiniciar a animação
             progressBar.classList.add('animate-progress-bar')
         }
     }
 
     return (
-        <div className='w-full p-2 lg:p-0 aspect-[21/9] relative'>
+        <div className='relative w-full h-[calc(50vh-var(--header-height))] lg:h-[calc(97vh-var(--header-height))] p-2 lg:p-0'>
             <Swiper
                 className="w-full h-full"
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
-                pagination
-                autoplay={{ delay: 3500 }}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3500, disableOnInteraction: false }}
+                loop={true}
                 onSlideChange={handleSlideChange}
             >
-                {images.map((item, index) => (
-                    <SwiperSlide key={index}>
+                {/* 2. Mapeie diretamente para o componente SwiperSlide */}
+                {slides.map((slide, index) => (
+                    <SwiperSlide key={slide.id}>
+                        <h1 className='text-4xl md:text-6xl lg:text-7xl leading-snug text-shadow-lg text-shadow-black font-bold text-white absolute m-6 z-1'>
+                            {slide.title}
+                        </h1>
+
                         <Image
-                            src={item}
-                            alt={`Imagem do carrossel ${index + 1}`}
+                            src={slide.imageUrl}
+                            alt={slide.title}
                             fill
                             className="object-cover rounded-xl lg:rounded-none"
                             priority={index === 0}
@@ -53,7 +68,7 @@ const Carousel = ({ images, showProgressBar = false }: Props) => {
                 ))}
             </Swiper>
 
-            {showProgressBar && <div ref={progressBarRef} className='bg-sky-500 h-2'></div>}
+            {showProgressBar && <div ref={progressBarRef} className='bg-sky-500 h-2 animate-progress-bar'></div>}
         </div>
     );
 }

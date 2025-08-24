@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --header-height: 72px;
 }
 
 @theme inline {
@@ -42,5 +43,5 @@ body {
 .swiper-button-next {
   color: gray !important;
   background-color: rgba(102, 102, 102, 0.3);
-  padding: 60px 20px;
+  padding: 50px 60px;
 }

@@ -1,7 +1,6 @@
 import Carousel from "@/components/Carousel";
 import Footer from "@/components/Footer";
 import HeaderPage from "@/components/HeaderPage";
-import { CarouselImagesAbsolutePath } from '@/components/Images'
 import LocationMap from "@/components/LocationMap";
 import ServicesGrid from "@/components/ServicesGrid";
 
@@ -12,7 +11,7 @@ const Page = () => {
 
       <main className="">
         <section className="mt-2 lg:mt-0">
-          <Carousel images={CarouselImagesAbsolutePath} />
+          <Carousel />
         </section>
         <section className="mt-1 lg:mt-5">
           <ServicesGrid />
