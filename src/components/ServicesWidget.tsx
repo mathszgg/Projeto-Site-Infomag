@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image"
-import { Button } from "./ui/Button";
 import CallButtons from "./CallButtons";
 
 type WidgetProps = {
@@ -10,10 +9,9 @@ type WidgetProps = {
     services: string[];
 }
 
-const ServicesWidget = ({ imgUrl, title, services}: WidgetProps) => {
-    
+const ServicesWidget = ({ imgUrl, title, services }: WidgetProps) => {
     return (
-        <div className="px-2 pt-5 pb-4 bg-gray-50 shadow-xl shadow-gray-300 rounded-xl flex flex-col items-center h-full text-black">
+        <div className="px-2 pt-5 pb-4 bg-gray-50 shadow-xl shadow-gray-400 rounded-xl flex flex-col items-center h-full text-black">
             <div className="w-full">
                 <Image 
                     src={imgUrl}
@@ -24,7 +22,7 @@ const ServicesWidget = ({ imgUrl, title, services}: WidgetProps) => {
                 />
             </div>
             <div className="flex flex-col justify-center items-center mt-5">
-                <h1 className="text-5xl font-bold text-center">{title}</h1>
+                <h1 className="text-4xl font-bold text-center">{title}</h1>
                 <Image 
                     src={'/img/page/services-widget/tool.svg'}
                     alt="Tool Image"
@@ -35,7 +33,7 @@ const ServicesWidget = ({ imgUrl, title, services}: WidgetProps) => {
             <div className="mt-10 pl-7 w-full flex-grow">
                 <ul>
                     {services.map((item) => 
-                        <li className="list-disc list-inside text-xl font-bold text-gray-700" key={item}>{item}</li>
+                        <li className="list-disc list-inside text-lg font-bold text-gray-700" key={item}>{item}</li>
                     )}
                 </ul>
             </div>

@@ -1,4 +1,5 @@
 import Carousel from "@/components/Carousel";
+import ChooseUs from "@/components/ChooseUs";
 import Footer from "@/components/Footer";
 import HeaderPage from "@/components/HeaderPage";
 import LocationMap from "@/components/LocationMap";
@@ -15,6 +16,9 @@ const Page = () => {
         </section>
         <section className="mt-1 lg:mt-5">
           <ServicesGrid />
+        </section>
+        <section className="mt-10">
+          <ChooseUs />
         </section>
         <section className="mt-10">
           <hr className="border-gray-300"/>
