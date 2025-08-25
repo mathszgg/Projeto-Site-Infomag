@@ -1,9 +1,10 @@
 import Carousel from "@/components/Carousel";
 import ChooseUs from "@/components/ChooseUs";
+import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
 import HeaderPage from "@/components/HeaderPage";
 import LocationMap from "@/components/LocationMap";
-import ServicesGrid from "@/components/ServicesGrid";
+import ServicesGrid from "@/components/old/ServicesGrid";
 
 const Page = () => {
   return (
@@ -19,6 +20,9 @@ const Page = () => {
         </section>
         <section className="mt-10">
           <ChooseUs />
+        </section>
+        <section className="mt-10">
+          <CustomerReviews />
         </section>
         <section className="mt-10">
           <hr className="border-gray-300"/>

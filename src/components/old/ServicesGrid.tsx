@@ -1,4 +1,4 @@
-import ServicesWidget from "@/components/ServicesWidget";
+import ServicesWidget from "@/components/old/ServicesWidget";
 import { ServiceImagesAbsolutePath } from '@/components/Images'
 
 type ServiceWidgetProps = {

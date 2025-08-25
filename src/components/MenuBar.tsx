@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react";
 
 const NavegationPages: any[] =
     [
-        { href: "/", label: "Home", imageIcon: <Home className='w-8 h-8 stroke-gray-800'/> },
+        { href: "/", label: "Início", imageIcon: <Home className='w-8 h-8 stroke-gray-800'/> },
         { href: "/sobre", label: "Sobre", imageIcon: <Info className='w-8 h-8 stroke-gray-800'/> },
         { href: "/contato", label: "Contato", imageIcon: <Phone className='w-8 h-8 stroke-gray-800'/> }
     ]

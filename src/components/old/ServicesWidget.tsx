@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image"
-import CallButtons from "./CallButtons";
+import CallButtons from "../CallButtons";
 
 type WidgetProps = {
     imgUrl: string;
