@@ -40,9 +40,9 @@ const Carousel = ({ showProgressBar = true }: Props) => {
     }
 
     return (
-        <div className='relative w-full h-[calc(50vh-var(--header-height))] lg:h-[calc(93vh-var(--header-height))] p-2 lg:p-0'>
+        <div className='relative w-full h-[calc(50vh-var(--header-height))] lg:h-[calc(93vh-var(--header-height))] px-2 lg:p-0'>
             <Swiper
-                className="primary-carousel w-full h-full"
+                className="primary-carousel w-full h-full overflow-visible"
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
                 pagination={{ clickable: true }}
@@ -53,7 +53,7 @@ const Carousel = ({ showProgressBar = true }: Props) => {
                 {/* 2. Mapeie diretamente para o componente SwiperSlide */}
                 {slides.map((slide, index) => (
                     <SwiperSlide key={slide.id}>
-                        <h1 className='text-4xl md:text-6xl lg:text-7xl leading-snug text-shadow-lg text-shadow-black font-bold text-white absolute m-6 z-1'>
+                        <h1 className='z-10 text-4xl md:text-6xl lg:text-7xl leading-snug text-shadow-lg text-shadow-black font-bold text-white absolute mx-10 my-6'>
                             {slide.title}
                         </h1>
 

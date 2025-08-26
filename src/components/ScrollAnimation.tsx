@@ -3,8 +3,9 @@
 
 import { useInView } from 'react-intersection-observer';
 import { ReactNode } from 'react';
+import { Direction } from '@/types/Direction';
 
-type Direction = 'top' | 'bottom' | 'left' | 'right';
+
 
 type ScrollAnimationProps = {
     children: ReactNode;
@@ -32,7 +33,7 @@ export function ScrollAnimation({ children, className, direction = 'bottom' }: S
     return (
         <div
             ref={ref}
-            className={`${className} transition-all ease-out duration-[1500ms] ${
+            className={`${className} ${ !className?.includes("duration-") ? 'duration-[1500ms]' : ''}  transition-all ease-out ${
                 inView ? animationClasses.final : animationClasses.initial
             }`}
         >

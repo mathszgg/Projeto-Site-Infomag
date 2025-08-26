@@ -4,7 +4,7 @@ import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
 import HeaderPage from "@/components/HeaderPage";
 import LocationMap from "@/components/LocationMap";
-import ServicesGrid from "@/components/old/ServicesGrid";
+import ServicesProvided from "@/components/ServicesProvided";
 
 const Page = () => {
   return (
@@ -12,13 +12,11 @@ const Page = () => {
       <HeaderPage />
 
       <main className="">
-        <section className="mt-2 lg:mt-0">
-          <Carousel />
+        <section className="pt-1 lg:mt-0 bg-gray-200">
+          <div><Carousel showProgressBar={false} /></div>
+          <div className="pt-5 lg:-mt-46 pb-10"><ServicesProvided /></div>
         </section>
-        <section className="mt-1 lg:mt-5">
-          <ServicesGrid />
-        </section>
-        <section className="mt-10">
+        <section>
           <ChooseUs />
         </section>
         <section className="mt-10">
