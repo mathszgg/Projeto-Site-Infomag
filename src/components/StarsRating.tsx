@@ -10,7 +10,7 @@ const StarsRating = ({ count, w, h }: StarsRatingProps) => {
     return (
         <div className="flex flex-row">
             {Array(count).fill(null).map((_, index) => (
-                <Star key={index} className='fill-yellow-500' style={{ width: `${w}px`, height: `${h}px` }} />
+                <Star key={index} className='fill-yellow-500 stroke-0' style={{ width: `${w}px`, height: `${h}px` }} />
             ))}
         </div>
     )

@@ -20,7 +20,7 @@ const reasons: ReasonsData[] = [
 
 const ChooseUs = () => {
     return (
-        <div className='bg-primary-color flex flex-col items-center justify-center w-full'>
+        <div className='bg-gradient-to-r from-primary-color to-[#007726] flex flex-col items-center justify-center w-full'>
             <ScrollAnimation className='mt-8' direction='left'><h2 className='text-center text-5xl text-white font-bold'>Razões para nos escolher</h2></ScrollAnimation>
 
             <ScrollAnimation className='inline-grid w-11/12 max-w-6xl grid-cols-2 sm:grid-cols-3 gap-6 mx-4 my-10'>
