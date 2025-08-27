@@ -40,7 +40,7 @@ const CustomerReviews = () => {
                 {reviews.map((item, index) => (
                     <div key={index} className="w-full transition-all bg-gradient-to-b from-primary-color to-[#006e23] shadow-lg flex flex-col gap-3 p-5 rounded-lg hover:scale-105 hover:bg-green-700 hover:shadow-xl shadow-gray-400">
                         <div className="flex-grow text-xl">
-                            <p>{item.text}</p>
+                            <p className="cursor-default">{item.text}</p>
                         </div>
                         <div className="flex flex-row justify-start items-center gap-5">
                             <Image

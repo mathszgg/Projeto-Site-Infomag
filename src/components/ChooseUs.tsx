@@ -28,7 +28,7 @@ const ChooseUs = () => {
                     return (
                         <div key={index} className='transition-all bg-secondary-color hover:scale-105 hover:bg-amber-100 hover:shadow-lg w-full h-45 rounded-xl flex flex-col items-center justify-center gap-10'>
                             <item.img className='w-12 h-12 fill-yellow-500' />
-                            <h3 className='text-center text-xl sm:text-2xl font-bold'>{item.title}</h3>
+                            <h3 className='cursor-default text-center text-xl sm:text-2xl font-bold'>{item.title}</h3>
                         </div>
                     )
                 })}

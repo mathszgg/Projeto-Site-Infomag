@@ -30,7 +30,7 @@ const ServicesProvided = () => {
                     >
                         <Image src={item.image} alt={"Imagem do item " + item.title} width={128} height={128} className="mb-5 w-32 h-32 object-contain flex justify-center items-center" />
 
-                        <p className="text-secondary-color text-2xl md:text-3xl lg:text-2xl 2xl:text-4xl font-bold text-center grow">{item.text}</p>
+                        <p className="cursor-default text-secondary-color text-2xl md:text-3xl lg:text-2xl 2xl:text-4xl font-bold text-center grow">{item.text}</p>
 
                         <Button className="mt-10 w-11/12 cursor-pointer">{item.buttonText}</Button>
                     </ScrollAnimation>
