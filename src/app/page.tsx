@@ -14,7 +14,9 @@ const Page = () => {
       <main className="">
         <section className="pt-1 lg:mt-0 bg-gray-200">
           <div><Carousel showProgressBar={false} /></div>
-          <div className="pt-5 lg:-mt-46 pb-10"><ServicesProvided /></div>
+        </section>
+        <section>
+          <div className="pt-5 pb-10 bg-gray-200"><ServicesProvided /></div>
         </section>
         <section>
           <ChooseUs />

@@ -9,13 +9,17 @@ const Footer = () => {
             <div className="container mx-auto px-6 py-12">
                 {/* Container principal com 3 colunas */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
+
                     {/* Coluna 1: Logo e Descrição */}
                     <div className="flex flex-col items-center md:items-start ">
-                        <Logo />
+                        <div className="bg-white p-1 rounded-xl">
+                            <Logo />
+                        </div>
+
                         <p className="mt-4 text-center md:text-left text-gray-400">
                             Sua empresa de assistência técnica especializada em Piraí, RJ. Qualidade e confiança que você pode contar.
                         </p>
+
                     </div>
 
                     {/* Coluna 2: Links Rápidos */}

@@ -12,21 +12,21 @@ type Services = {
 }
 
 const servicesList: Services[] = [
-    { image: '/img/page/services-provided/phone.png', title: 'Manutenção de Celulares', text: 'Reparo profissional em celulares!', buttonText: 'Realizar Orçamento', transitionDirection: "bottom" },
-    { image: '/img/page/services-provided/computer.png', title: 'Manutenção de Computadores', text: 'Diversos reparos em computadores / notebooks!', buttonText: 'Realizar Orçamento', transitionDirection: "top" },
+    { image: '/img/page/services-provided/phone.png', title: 'Manutenção de Celulares', text: 'Reparo profissional em celulares!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
+    { image: '/img/page/services-provided/computer.png', title: 'Manutenção de Computadores', text: 'Diversos reparos em computadores / notebooks!', buttonText: 'Saiba Mais', transitionDirection: "top" },
     { image: '/img/page/services-provided/cftv.png', title: 'Instalação de Câmeras CFTV', text: 'Instalação de Câmeras de Monitoramento CFTV!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
     { image: '/img/page/services-provided/pdv.png', title: 'Instalação de Sistemas', text: 'Temos diversos sistemas para seu negócio!', buttonText: 'Saiba Mais', transitionDirection: "top" }
 ]
 
 const ServicesProvided = () => {
     return (
-        <div className="opacity-98 relative z-20 w-11/12 container h-auto m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-stretch">
+        <div className="z-20 relative w-11/12 container h-auto m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-stretch">
             {servicesList.map((item, index) => {
                 return (
                     <ScrollAnimation 
                         key={index} 
                         direction={item.transitionDirection} 
-                        className="bg-primary-color border border-gray-700 w-full py-6 px-4 rounded-lg flex flex-col items-center shadow-lg shadow-gray-500 hover:scale-105 hover:shadow-xl duration-800 "
+                        className="bg-gradient-to-t from-primary-color to-[#003f14] border border-gray-700 w-full py-6 px-4 rounded-lg flex flex-col items-center shadow-lg shadow-gray-500 hover:scale-105 hover:shadow-xl duration-400"
                     >
                         <Image src={item.image} alt={"Imagem do item " + item.title} width={128} height={128} className="mb-5 w-32 h-32 object-contain flex justify-center items-center" />
 

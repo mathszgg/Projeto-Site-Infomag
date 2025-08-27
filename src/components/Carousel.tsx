@@ -13,6 +13,7 @@ import { useRef } from 'react';
 // Não precisa mais importar o CarouselSlide
 // import CarouselSlide from './CarouselSlide'; 
 import { SlideProps } from '@/types/TypeCarouselSlides';
+import Logo from './ui/Logo';
 
 type Props = {
     showProgressBar?: boolean;
