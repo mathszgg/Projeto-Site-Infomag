@@ -144,3 +144,31 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #007aff !important;
 }
+
+
+
+/* BACKGROUND IMAGE STORE INTERIOR */
+.bg-store-interior-darken {
+  position: relative; /* Essencial para que o pseudo-elemento se posicione corretamente */
+}
+
+.bg-store-interior-darken::before {
+  content: ''; /* Essencial para que o pseudo-elemento seja renderizado */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+  z-index: 1; /* Garante que o overlay fique SOBRE a imagem de fundo */
+}
+
+/* Opcional: Para garantir que o conteúdo fique acima do overlay */
+.bg-store-interior-darken > * {
+  position: relative;
+  z-index: 2; /* Garante que o conteúdo dentro da div fique ACIMA do overlay */
+}
+
+.bg-store-interior {
+  background-image: url('/img/page/carousel/slide-cftv.png');
+}

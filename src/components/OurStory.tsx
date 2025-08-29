@@ -1,0 +1,47 @@
+import { CheckCircle } from "lucide-react";
+import Image from "next/image";
+
+const checks: string[] = [
+    'Diagnóstico gratuito e transparente',
+    'Serviço de alta qualidade',
+    'Atendimento personalizado'
+]
+
+const OurStory = () => {
+    return (
+        <section
+            id="our-story"
+            className="container w-9/12 flex flex-row gap-10 m-auto mt-5"
+            aria-labelledby="our-story-title" // Melhor para acessibilidade
+        >
+            <div className="flex-1 relative aspect-[4/2]">
+                <Image 
+                    src={'/img/page/carousel/slide-notebook.png'}
+                    alt="Imagem de reparo em notebook"
+                    fill
+                    className="rounded-xl shadow-xl shadow-gray-500"
+                    style={{ width: '100%', height: '100%' }}
+                />
+            </div>
+
+            <div className="flex-1 flex flex-col gap-10 py-10">
+                <h2 className="text-5xl font-bold">Nossa História</h2>
+
+                <p className="text-2xl leading-relaxed">Fundada em 2014, a TechFix Pro nasceu da paixão por tecnologia e do desejo de
+                    oferecer um atendimento diferenciado no setor de assistência técnica. Começamos
+                    como uma pequena oficina e hoje somos referência na região.</p>
+
+                <div className="flex flex-col gap-2">
+                    {checks.map((item, index) => (
+                        <div key={index} className="flex flex-row gap-3">
+                            <CheckCircle className="stroke-primary-color" />
+                            <span className="text-xl">{item}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default OurStory;
