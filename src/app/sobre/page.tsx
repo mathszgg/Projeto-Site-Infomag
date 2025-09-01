@@ -1,6 +1,8 @@
 import AboutUs from "@/components/AboutUs";
 import HeaderPage from "@/components/HeaderPage";
+import OurObjectives from "@/components/OurObjectives";
 import OurStory from "@/components/OurStory";
+import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 const Sobre = () => {
     return (
@@ -9,7 +11,13 @@ const Sobre = () => {
 
             <main>
                 <AboutUs />
-                <OurStory />
+                <ScrollAnimation direction="right" className="mt-10">
+                    <OurStory />
+                </ScrollAnimation>
+                
+                <ScrollAnimation direction="left" className="md:mt-10">
+                    <OurObjectives />
+                </ScrollAnimation>
             </main>
         </>
     )

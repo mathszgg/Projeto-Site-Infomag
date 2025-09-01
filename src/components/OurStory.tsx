@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, History } from "lucide-react";
 import Image from "next/image";
 
 const checks: string[] = [
@@ -11,21 +11,24 @@ const OurStory = () => {
     return (
         <section
             id="our-story"
-            className="container w-9/12 flex flex-row gap-10 m-auto mt-5"
+            className="w-11/12 xl:w-9/12 flex flex-col gap-5 lg:flex-row lg:gap-10 m-auto mt-5"
             aria-labelledby="our-story-title" // Melhor para acessibilidade
         >
-            <div className="flex-1 relative aspect-[4/2]">
+            <div className="flex-1 relative aspect-[4/2] grow shrink">
                 <Image 
                     src={'/img/page/carousel/slide-notebook.png'}
                     alt="Imagem de reparo em notebook"
                     fill
                     className="rounded-xl shadow-xl shadow-gray-500"
-                    style={{ width: '100%', height: '100%' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'right' }}
                 />
             </div>
 
-            <div className="flex-1 flex flex-col gap-10 py-10">
-                <h2 className="text-5xl font-bold">Nossa História</h2>
+            <div className="flex-1 flex flex-col gap-10 py-10 grow shrink-0">
+                <div className="flex flex-row items-center justify-start gap-4">
+                    <History width={48} height={48} className="stroke-primary-color" />
+                    <h2 className="text-5xl font-bold">Nossa História</h2>
+                </div>
 
                 <p className="text-2xl leading-relaxed">Fundada em 2014, a TechFix Pro nasceu da paixão por tecnologia e do desejo de
                     oferecer um atendimento diferenciado no setor de assistência técnica. Começamos
