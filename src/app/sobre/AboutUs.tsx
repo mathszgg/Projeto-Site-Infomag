@@ -1,5 +1,5 @@
 import { Award, Users } from "lucide-react";
-import Badge from "./ui/Badge";
+import Badge from "../../components/ui/Badge";
 
 const badgesData = [
     {

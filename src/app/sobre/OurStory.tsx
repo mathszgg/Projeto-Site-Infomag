@@ -30,7 +30,7 @@ const OurStory = () => {
                     <h2 className="text-5xl font-bold">Nossa História</h2>
                 </div>
 
-                <p className="text-2xl leading-relaxed">Fundada em 2014, a TechFix Pro nasceu da paixão por tecnologia e do desejo de
+                <p className="text-2xl leading-relaxed">Fundada em 2017, a InfoMag nasceu da paixão por tecnologia e do desejo de
                     oferecer um atendimento diferenciado no setor de assistência técnica. Começamos
                     como uma pequena oficina e hoje somos referência na região.</p>
 

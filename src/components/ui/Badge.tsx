@@ -6,7 +6,7 @@ export type BadgeProps = {
     className?: string;
     Icon: LucideIcon;
     text: string;
-    animationDirection: 'left' | 'right';
+    animationDirection?: 'left' | 'right';
 }
 
 const Badge = ({ className, Icon, text, animationDirection }: BadgeProps) => {
@@ -17,7 +17,7 @@ const Badge = ({ className, Icon, text, animationDirection }: BadgeProps) => {
                 transition-transform duration-300 ease-in-out hover:bg-gray-200 hover:scale-110 grow 
                 ${className}
             `}
-            direction={animationDirection}
+            {...(animationDirection && { direction: animationDirection } )}
         >
             <Icon width={24} height={24} className="fill-gray-200 stroke-primary-color" />
             <p className='cursor-default'>{text}</p>

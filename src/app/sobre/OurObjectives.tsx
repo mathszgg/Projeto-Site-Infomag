@@ -1,6 +1,6 @@
 import { Award, FastForward, ShieldCheck, Wrench } from "lucide-react";
 import Image from "next/image";
-import Badge, { BadgeProps } from "./ui/Badge";
+import Badge, { BadgeProps } from "../../components/ui/Badge";
 
 const checks: string[] = [
     'Diagnóstico gratuito e transparente',
@@ -14,19 +14,16 @@ const badges: BadgeProps[] = [
     {
         Icon: Wrench,
         text: "Serviço de Qualidade",
-        animationDirection: "left",
         className: badgesClassName
     },
     {
         Icon: FastForward,
         text: "Prazo curto",
-        animationDirection: "left",
         className: badgesClassName
     },
     {
         Icon: ShieldCheck,
         text: "Confiabilidade",
-        animationDirection: "left",
         className: badgesClassName + ' col-span-2 md:col-span-1'
     }
 ];
