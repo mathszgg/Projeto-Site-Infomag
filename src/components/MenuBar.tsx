@@ -7,9 +7,8 @@ import { useState, useRef, useEffect } from "react";
 
 const NavegationPages: any[] =
     [
-        { href: "/", label: "Início", imageIcon: <Home className='w-8 h-8 stroke-gray-800'/> },
-        { href: "/sobre", label: "Sobre", imageIcon: <Info className='w-8 h-8 stroke-gray-800'/> },
-        { href: "/contato", label: "Contato", imageIcon: <Phone className='w-8 h-8 stroke-gray-800'/> }
+        { href: "/", label: "Início", imageIcon: <Home className='w-8 h-8 stroke-primary-color'/> },
+        { href: "/sobre", label: "Sobre", imageIcon: <Info className='w-8 h-8 stroke-primary-color'/> }
     ]
 
 const MenuBar = () => {
@@ -63,7 +62,7 @@ const MenuBar = () => {
 
                 <div ref={menuRef} className={`
                     absolute translate-y-8 bg-gray-600 border border-gray-600 flex items-center 
-                    w-40 h-45 rounded-md shadow-md shadow-gray-800 text-white
+                    w-40 h-35 rounded-md shadow-md shadow-gray-800 text-white
                     transition-all duration-300 ease-in-out origin-top-right
                     ${showMenuList
                         ? 'opacity-100 scale-100'

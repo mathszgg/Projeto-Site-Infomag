@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import HeaderPage from "@/components/HeaderPage";
 import LocationMap from "@/components/LocationMap";
 import ServicesProvided from "@/components/ServicesProvided";
+import TalkToUs from "@/components/TalkToUs";
 
 const Page = () => {
   return (
@@ -31,6 +32,10 @@ const Page = () => {
             directionsUrl="https://maps.app.goo.gl/mihNr5WDmCHqCdED9"
             addressLine1="R. Barão de Piraí, 412 - Centro, Piraí - RJ, 27175-000"
           />
+
+          <br />
+            <TalkToUs />
+          <br />
         </section>
       </main>
 

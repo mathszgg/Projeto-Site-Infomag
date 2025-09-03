@@ -5,7 +5,7 @@ import OurObjectives from "@/app/sobre/OurObjectives";
 import OurStory from "@/app/sobre/OurStory";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 
-const Sobre = () => {
+const Page = () => {
     return (
         <>
             <HeaderPage />
@@ -25,4 +25,4 @@ const Sobre = () => {
     )
 }
 
-export default Sobre;
+export default Page;

@@ -10,7 +10,7 @@ type BarProps = {
 const socialNewtorkURLs: any[] = [
     { name: "Instagram", url: "https://www.instagram.com/infomagtecnica/", image: "/img/page/icon/instagram-32.png" },
     { name: "Facebook", url: "https://www.facebook.com/InfoMagPirai/", image: "/img/page/icon/facebook-32.png" },
-    { name: "WhatsApp", url: "https://api.whatsapp.com/send/?phone=5524999667657", image: "/img/page/icon/whatsapp-32.png" }
+    { name: "WhatsApp", url: "https://wa.me/5524999667657", image: "/img/page/icon/whatsapp-32.png" }
 ];
 
 const getSocialNetwork = (socialName: string) => {

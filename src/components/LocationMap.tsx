@@ -8,7 +8,7 @@ interface LocationMapProps {
 
 const LocationMap = ({ embedUrl, directionsUrl, addressLine1 }: LocationMapProps) => {
   return (
-    <section className="w-full max-w-5xl mx-auto py-6 px-2 md:px-3">
+    <section className="w-11/12 xl:w-10/12 mx-auto py-6 px-2 md:px-3">
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Onde nos encontrar?</h2>
         <p className="mt-2 text-lg text-gray-600">
@@ -19,7 +19,7 @@ const LocationMap = ({ embedUrl, directionsUrl, addressLine1 }: LocationMapProps
       <div className="overflow-hidden rounded-lg shadow-xl bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Coluna do Mapa */}
-          <div className="w-full h-80 md:h-full">
+          <div className="w-full h-80">
             <iframe
               src={embedUrl}
               width="100%"
