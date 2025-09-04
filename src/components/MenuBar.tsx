@@ -43,7 +43,7 @@ const MenuBar = () => {
 
     return (
         <nav>
-            <ul className="hidden md:flex flex-row items-center gap-6 text-2xl font-bold">
+            <ul className="hidden md:flex flex-row items-center gap-8 text-2xl font-bold">
                 {NavegationPages.map((item) => (
                     <li key={item.href} className="border-b-4 border-transparent transition-colors hover:border-b-green-800">
                         <Link href={item.href}>{item.label}</Link>
