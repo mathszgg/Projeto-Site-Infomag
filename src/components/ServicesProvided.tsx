@@ -6,6 +6,7 @@ import Link from "next/link";
 
 type Services = {
     href: string;
+    label: string;
     image: string;
     title: string;
     text: string;
@@ -16,10 +17,10 @@ type Services = {
 const waMeUrl:string = 'https://wa.me/5524999667657?text=';
 
 const servicesList: Services[] = [
-    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de reparo do meu celular.', image: '/img/page/services-provided/phone.png', title: 'Manutenção de Celulares', text: 'Reparo profissional em celulares!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
-    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de reparo do meu computador.', image: '/img/page/services-provided/computer.png', title: 'Manutenção de Computadores', text: 'Diversos reparos em computadores / notebooks!', buttonText: 'Saiba Mais', transitionDirection: "top" },
-    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de instalação de câmeras de segurança.',image: '/img/page/services-provided/cftv.png', title: 'Instalação de Câmeras CFTV', text: 'Instalação de Câmeras de Monitoramento CFTV!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
-    { href: waMeUrl+'Olá! Gostaria de saber mais sobre os sistemas para meu negócio.', image: '/img/page/services-provided/pdv.png', title: 'Instalação de Sistemas', text: 'Temos diversos sistemas para seu negócio!', buttonText: 'Saiba Mais', transitionDirection: "top" }
+    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de reparo do meu celular.', label: 'Clique para realizar um orçamento de reparo do seu celular', image: '/img/page/services-provided/phone.png', title: 'Manutenção de Celulares', text: 'Reparo profissional em celulares!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
+    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de reparo do meu computador.', label: 'Clique para realizar um orçamento do seu computador', image: '/img/page/services-provided/computer.png', title: 'Manutenção de Computadores', text: 'Diversos reparos em computadores / notebooks!', buttonText: 'Saiba Mais', transitionDirection: "top" },
+    { href: waMeUrl+'Olá! Gostaria de realizar um orçamento de instalação de câmeras de segurança.', label: 'Clique para realizar um orçamento de instalação de câmeras CFTV', image: '/img/page/services-provided/cftv.png', title: 'Instalação de Câmeras CFTV', text: 'Instalação de Câmeras de Monitoramento CFTV!', buttonText: 'Saiba Mais', transitionDirection: "bottom" },
+    { href: waMeUrl+'Olá! Gostaria de saber mais sobre os sistemas para meu negócio.', label: 'Clique para saber mais sobre sistemas para seu negócio', image: '/img/page/services-provided/pdv.png', title: 'Instalação de Sistemas', text: 'Temos diversos sistemas para seu negócio!', buttonText: 'Saiba Mais', transitionDirection: "top" }
 ]
 
 const ServicesProvided = () => {
@@ -37,7 +38,7 @@ const ServicesProvided = () => {
 
                         <p className="cursor-default text-secondary-color text-2xl md:text-3xl lg:text-2xl 2xl:text-4xl font-bold text-center grow">{item.text}</p>
 
-                        <Button href={item.href} className="mt-10 w-11/12 cursor-pointer">{item.buttonText}</Button>
+                        <Button href={item.href} aria-label={item.label} className="mt-10 w-11/12 cursor-pointer">{item.buttonText}</Button>
                     </ScrollAnimation>
                 )
             })}
