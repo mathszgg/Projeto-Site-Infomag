@@ -13,7 +13,7 @@ const Footer = () => {
                     {/* Coluna 1: Logo e Descrição */}
                     <div className="flex flex-col items-center md:items-start ">
                         <div className="bg-white p-1 rounded-xl">
-                            <Logo />
+                            <Logo useLazy/>
                         </div>
 
                         <p className="mt-4 text-center md:text-left text-gray-100">

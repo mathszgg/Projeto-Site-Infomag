@@ -16,7 +16,7 @@ const Page = () => {
                 
                 <OurStory />
                 
-                <ScrollAnimation direction="left" className="md:mt-10 mb-15">
+                <ScrollAnimation direction="left" className="mt-5 md:mt-10 lg:mb-15">
                     <OurObjectives />
                 </ScrollAnimation>
 

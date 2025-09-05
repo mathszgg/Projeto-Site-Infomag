@@ -38,6 +38,7 @@ const SocialNetworkItem = (socialName: string) => {
                         alt=""
                         width={28}
                         height={28}
+                        loading="lazy"
                         style={{ backgroundColor: "#FFFFFF", borderRadius: "8px" }}
                     />
                 </Link>
