@@ -1,6 +1,6 @@
 import AboutUs from "@/app/sobre/AboutUs";
 import Footer from "@/components/Footer";
-import HeaderPage from "@/components/HeaderPage";
+import HeaderPage from "@/components/ui/HeaderPage";
 import OurObjectives from "@/app/sobre/OurObjectives";
 import OurStory from "@/app/sobre/OurStory";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
@@ -16,9 +16,7 @@ const Page = () => {
                 
                 <OurStory />
                 
-                <ScrollAnimation direction="left" className="mt-5 md:mt-10 lg:mb-15">
-                    <OurObjectives />
-                </ScrollAnimation>
+                <OurObjectives />
 
                 <TalkToUs />
             </main>

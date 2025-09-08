@@ -2,7 +2,7 @@ import Carousel from "@/components/Carousel";
 import ChooseUs from "@/components/ChooseUs";
 import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
-import HeaderPage from "@/components/HeaderPage";
+import HeaderPage from "@/components/ui/HeaderPage";
 import LocationMap from "@/components/LocationMap";
 import ServicesProvided from "@/components/ServicesProvided";
 import TalkToUs from "@/components/TalkToUs";
@@ -12,7 +12,7 @@ const Page = () => {
     <>
       <HeaderPage />
 
-      <main className="">
+      <main>
         <section className="pt-1 lg:mt-0 bg-gray-200">
           <div><Carousel showProgressBar={false} /></div>
         </section>

@@ -29,9 +29,8 @@ const ServicesProvided = () => {
         <div className="z-20 relative w-11/12 container h-auto m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-stretch">
             {servicesList.map((item, index) => {
                 return (
-                    <ScrollAnimation 
+                    <div 
                         key={index} 
-                        direction={item.transitionDirection} 
                         className="bg-gradient-to-t from-primary-color to-[#003f14] border border-gray-700 w-full py-6 px-4 rounded-lg flex flex-col items-center shadow-lg shadow-gray-500 hover:scale-105 hover:shadow-xl duration-400"
                     >
                         <Image src={item.image} alt={"Imagem do item " + item.title} width={128} height={128} className="mb-5 w-32 h-32 object-contain flex justify-center items-center" />
@@ -39,7 +38,7 @@ const ServicesProvided = () => {
                         <p className="cursor-default text-secondary-color text-2xl md:text-3xl lg:text-2xl 2xl:text-4xl font-bold text-center grow">{item.text}</p>
 
                         <Button href={item.href} aria-label={item.label} className="mt-10 w-11/12 cursor-pointer">{item.buttonText}</Button>
-                    </ScrollAnimation>
+                    </div>
                 )
             })}
         </div>
