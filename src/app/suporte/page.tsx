@@ -2,7 +2,7 @@
 
 import HeaderPage from "@/components/HeaderPage";
 import { Download, Loader2 } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 type GhRelease = {
@@ -51,11 +51,23 @@ async function fetchLatestRustDeskX64Exe(): Promise<string> {
 const Suporte = () => {
   const [loading, setLoading] = useState(false);
   const [showSteps, setShowSteps] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   const fallbackUrl = useMemo(
     () => "https://github.com/rustdesk/rustdesk/releases/latest",
     []
   );
+
+  // ✅ Fecha o balão depois de 5s
+  useEffect(() => {
+    if (!showHint) return;
+
+    const timer = setTimeout(() => {
+      setShowHint(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, [showHint]);
 
   const handleDownload = useCallback(async () => {
     if (loading) return;
@@ -72,10 +84,12 @@ const Suporte = () => {
       }
 
       setShowSteps(true);
+      setShowHint(true);
       window.location.href = url;
     } catch {
       window.open(fallbackUrl, "_blank");
       setShowSteps(true);
+      setShowHint(true);
     } finally {
       setLoading(false);
     }
@@ -87,16 +101,21 @@ const Suporte = () => {
 
       <main className="flex-1 flex">
         <div className="flex-1 bg-linear-to-br from-green-800 to-green-500 flex justify-start items-center flex-col">
-          <h1 className="text-7xl font-bold pt-5 text-white">
+          <h1 className="text-5xl md:text-7xl font-bold pt-5 text-white text-center">
             Suporte Remoto <span className="text-green-100">InfoMag</span>
           </h1>
 
           {showSteps ? (
-            <p onClick={handleDownload} className="text-gray-100 pt-2 underline hover:cursor-pointer">
+            <p
+              onClick={handleDownload}
+              className="text-gray-100 text-center pt-2 underline hover:cursor-pointer"
+            >
               Clique aqui caso o download não tenha iniciado
             </p>
           ) : (
-            <p className="text-gray-100 pt-2">Aplicativo de Acesso Remoto destinado a clientes InfoMag</p>
+            <p className="text-gray-100 text-center pt-2">
+              Aplicativo de Acesso Remoto destinado a clientes InfoMag
+            </p>
           )}
 
           <div className="flex-col flex-1 flex justify-center items-center gap-6">
@@ -119,20 +138,22 @@ const Suporte = () => {
                 <Download className="w-9 h-9 stroke-green-100" />
               )}
 
-              <span className="text-5xl text-white font-semibold">{loading ? "Preparando..." : "Baixar"}</span>
+              <span className="text-5xl text-white font-semibold">
+                {loading ? "Preparando..." : "Baixar"}
+              </span>
             </button>
 
-            {/* ✅ Seta no canto superior direito (tipo Google Downloads) */}
-            {showSteps && (
+            {/* ✅ Seta no canto superior direito (fecha sozinha em 5s) */}
+            {showHint && (
               <div className="fixed top-3 right-3 z-50 hidden md:block pointer-events-none">
-                {/* balão */}
                 <div className="relative">
                   <div className="bg-black/70 text-white px-4 py-3 rounded-xl shadow-xl backdrop-blur-sm">
                     <div className="text-base font-bold">Seu download está aqui em cima</div>
-                    <div className="text-sm text-white/90">Se não aparecer, veja a lista de downloads do navegador.</div>
+                    <div className="text-sm text-white/90">
+                      Se não aparecer, veja a lista de downloads do navegador.
+                    </div>
                   </div>
 
-                  {/* seta apontando pro canto superior */}
                   <div className="absolute -top-3 right-16 text-gray-300 text-5xl animate-bounce drop-shadow-lg">
                     ↑
                   </div>
@@ -141,9 +162,11 @@ const Suporte = () => {
             )}
 
             {showSteps && (
-              <div className="flex gap-5 bg-white rounded-xl shadow-2xl p-4 mt-3 max-w-4xl text-center animate-fade-in">
+              <div className="flex flex-col md:flex-row gap-5 bg-white rounded-xl shadow-2xl p-4 mt-3 max-w-4xl text-center animate-fade-in">
                 <div className="min-w-60">
-                  <h2 className="text-3xl font-bold text-green-800 mb-4 underline">Próximos Passos</h2>
+                  <h2 className="text-3xl font-bold text-green-800 mb-4 underline">
+                    Próximos Passos
+                  </h2>
 
                   <ol className="text-left text-xl text-gray-700 space-y-6">
                     <li>1️⃣ Abra o programa baixado.</li>
