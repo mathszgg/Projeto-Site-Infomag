@@ -48,6 +48,7 @@ const CustomerReviews = () => {
                                 alt={`Imagem do usuário ${item.nameUser}`}
                                 width={48}
                                 height={48}
+                                loading="lazy"
                             />
                             <h3>{item.nameUser}</h3>
                         </div>

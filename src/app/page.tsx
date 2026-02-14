@@ -2,16 +2,17 @@ import Carousel from "@/components/Carousel";
 import ChooseUs from "@/components/ChooseUs";
 import CustomerReviews from "@/components/CustomerReviews";
 import Footer from "@/components/Footer";
-import HeaderPage from "@/components/HeaderPage";
+import HeaderPage from "@/components/ui/HeaderPage";
 import LocationMap from "@/components/LocationMap";
 import ServicesProvided from "@/components/ServicesProvided";
+import TalkToUs from "@/components/TalkToUs";
 
 const Page = () => {
   return (
     <>
       <HeaderPage />
 
-      <main className="">
+      <main>
         <section className="pt-1 lg:mt-0 bg-gray-200">
           <div><Carousel showProgressBar={false} /></div>
         </section>
@@ -31,6 +32,10 @@ const Page = () => {
             directionsUrl="https://maps.app.goo.gl/mihNr5WDmCHqCdED9"
             addressLine1="R. Barão de Piraí, 412 - Centro, Piraí - RJ, 27175-000"
           />
+
+          <br />
+            <TalkToUs />
+          <br />
         </section>
       </main>
 

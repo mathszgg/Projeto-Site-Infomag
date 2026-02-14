@@ -8,7 +8,7 @@ const checks: string[] = [
     'Atendimento personalizado'
 ]
 
-const badgesClassName: string = 'text-sm text-center'
+const badgesClassName: string = 'text-sm text-center bg-gray-200'
 
 const badges: BadgeProps[] = [
     {
@@ -24,7 +24,7 @@ const badges: BadgeProps[] = [
     {
         Icon: ShieldCheck,
         text: "Confiabilidade",
-        className: badgesClassName + ' col-span-2 md:col-span-1'
+        className: badgesClassName + ' col-span-2 xl:col-span-1'
     }
 ];
 
@@ -32,7 +32,7 @@ const OurObjectives = () => {
     return (
         <section
             id="our-objectives"
-            className="w-11/12 xl:w-9/12 flex flex-col gap-5 lg:flex-row lg:gap-10 m-auto mt-5"
+            className="w-11/12 xl:w-9/12 flex flex-col gap-5 lg:flex-row lg:gap-10 m-auto mt-5 mb-8 lg:mb-16"
             aria-labelledby="our-story-title" // Melhor para acessibilidade
         >
             <div className="flex-1 flex flex-col order-2 lg:order-1 gap-10 py-10 grow shrink-0">
@@ -44,7 +44,7 @@ const OurObjectives = () => {
                 <p className="text-2xl leading-relaxed">
                     Nosso compromisso é entregar excelência em cada serviço, focando em qualidade e confiabilidade. Trabalhamos com prazos curtos para atender às suas necessidades com agilidade, e mantemos um atendimento profissional e transparente em todas as etapas do processo.</p>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 xl:grid-cols-3 gap-4">
                     {badges.map((item, index) => (
                         <Badge Icon={item.Icon} text={item.text} className={item.className} animationDirection={item.animationDirection} key={index} />
                     ))}

@@ -17,7 +17,7 @@ export function ScrollAnimation({ children, className, direction = 'bottom' }: S
     const { ref, inView } = useInView({
         // Opções
         triggerOnce: true, // A animação acontece apenas uma vez
-        threshold: 0.1,    // O elemento é considerado visível quando 10% dele estiver na tela
+        threshold: 0.2,    // O elemento é considerado visível quando 10% dele estiver na tela
     });
 
     const animationMap: { [key in Direction]: { initial: string; final: string } } = {

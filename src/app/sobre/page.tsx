@@ -1,11 +1,12 @@
 import AboutUs from "@/app/sobre/AboutUs";
 import Footer from "@/components/Footer";
-import HeaderPage from "@/components/HeaderPage";
+import HeaderPage from "@/components/ui/HeaderPage";
 import OurObjectives from "@/app/sobre/OurObjectives";
 import OurStory from "@/app/sobre/OurStory";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
+import TalkToUs from "@/components/TalkToUs";
 
-const Sobre = () => {
+const Page = () => {
     return (
         <>
             <HeaderPage />
@@ -15,9 +16,9 @@ const Sobre = () => {
                 
                 <OurStory />
                 
-                <ScrollAnimation direction="left" className="md:mt-10">
-                    <OurObjectives />
-                </ScrollAnimation>
+                <OurObjectives />
+
+                <TalkToUs />
             </main>
 
             <Footer />
@@ -25,4 +26,4 @@ const Sobre = () => {
     )
 }
 
-export default Sobre;
+export default Page;

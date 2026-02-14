@@ -22,8 +22,8 @@ type Props = {
 const slides: SlideProps[] =
     [
         { id: 0, imageUrl: '/img/page/carousel/slide-cellphone.png', title: 'Manutenção em Celulares' },
-        { id: 1, imageUrl: '/img/page/carousel/slide-cftv.png', title: 'Instalação de Câmeras CFTV' },
-        { id: 2, imageUrl: '/img/page/carousel/slide-notebook.png', title: 'Manutenção em Computadores' },
+        { id: 1, imageUrl: '/img/page/carousel/slide-notebook.png', title: 'Manutenção em Computadores' },
+        { id: 2, imageUrl: '/img/page/carousel/slide-cftv.png', title: 'Instalação de Câmeras CFTV' },
         { id: 3, imageUrl: '/img/page/carousel/slide-pdv.png', title: 'Sistemas PDV' }
     ]
 

@@ -43,7 +43,7 @@ const MenuBar = () => {
 
     return (
         <nav>
-            <ul className="hidden md:flex flex-row items-center gap-6 text-2xl font-bold">
+            <ul className="hidden md:flex flex-row items-center gap-8 text-2xl font-bold">
                 {NavegationPages.map((item) => (
                     <li key={item.href} className="border-b-4 border-transparent transition-colors hover:border-b-green-800">
                         <Link href={item.href}>{item.label}</Link>
@@ -62,8 +62,8 @@ const MenuBar = () => {
 
                 <div ref={menuRef} className={`
                     absolute translate-y-8 bg-gray-600 border border-gray-600 flex items-center 
-                    w-40 h-45 rounded-md shadow-md shadow-gray-800 text-white
-                    transition-all duration-300 ease-in-out origin-top-right
+                    w-40 h-35 rounded-md shadow-md shadow-gray-800 text-white
+                    transition-all duration-300 ease-in-out origin-top-right 
                     ${showMenuList
                         ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-95 pointer-events-none'

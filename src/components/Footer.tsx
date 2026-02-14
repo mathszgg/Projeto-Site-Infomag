@@ -13,10 +13,10 @@ const Footer = () => {
                     {/* Coluna 1: Logo e Descrição */}
                     <div className="flex flex-col items-center md:items-start ">
                         <div className="bg-white p-1 rounded-xl">
-                            <Logo />
+                            <Logo useLazy/>
                         </div>
 
-                        <p className="mt-4 text-center md:text-left text-gray-400">
+                        <p className="mt-4 text-center md:text-left text-gray-100">
                             Sua empresa de assistência técnica especializada em Piraí, RJ. Qualidade e confiança que você pode contar.
                         </p>
 
@@ -38,7 +38,7 @@ const Footer = () => {
                     {/* Coluna 3: Contato e Redes Sociais */}
                     <div className="border-l border-gray-600 px-4">
                         <h3 className="text-xl font-bold">Contato</h3>
-                        <address className="mt-4 not-italic text-gray-400 space-y-2">
+                        <address className="mt-4 not-italic text-gray-100 space-y-2">
                             <p>Rua Barão do Piraí, 412, Centro</p>
                             <p>Piraí, RJ - 27175-000</p>
                             <p>Telefone: (24) 99966-7657</p>
@@ -50,7 +50,7 @@ const Footer = () => {
                 </div>
 
                 {/* Linha de Copyright */}
-                <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-500">
+                <div className="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
                     <p>&copy; {new Date().getFullYear()} Infomag. Todos os direitos reservados.</p>
                 </div>
             </div>
