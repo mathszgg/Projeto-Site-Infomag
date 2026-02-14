@@ -1,7 +1,6 @@
 "use client";
 
-import { Home, ImageIcon, Info, Phone } from 'lucide-react'; // Biblioteca de ícones
-import Image from "next/image";
+import { Home, Info, Phone } from 'lucide-react'; // Biblioteca de ícone
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react";
 
@@ -9,7 +8,7 @@ const NavegationPages: any[] =
     [
         { href: "/", label: "Início", imageIcon: <Home className='w-8 h-8 stroke-gray-800'/> },
         { href: "/sobre", label: "Sobre", imageIcon: <Info className='w-8 h-8 stroke-gray-800'/> },
-        { href: "/contato", label: "Contato", imageIcon: <Phone className='w-8 h-8 stroke-gray-800'/> }
+        { href: "/suporte", label: "Suporte", imageIcon: <Phone className='w-8 h-8 stroke-gray-800'/> }
     ]
 
 const MenuBar = () => {
@@ -72,7 +71,7 @@ const MenuBar = () => {
                 `}>
                     <ul className="w-full flex flex-col gap-3">
                         {NavegationPages.map((item) => (
-                            <li key={item.href} className="text-2xl border-b pt-2 border-gray-600 flex flex-row gap-3 justify-start mx-4 items-start">
+                            <li key={item.href} className="text-2xl border-b pt-2 border-gray-600 flex flex-row gap-3 justify-start ml-2 items-start">
                                 {item.imageIcon}
                                 <Link href={item.href}>{item.label}</Link>
                             </li>
