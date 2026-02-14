@@ -1,6 +1,6 @@
 "use client";
 
-import HeaderPage from "@/components/HeaderPage";
+import HeaderPage from "@/components/ui/HeaderPage";
 import { Download, Loader2 } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
