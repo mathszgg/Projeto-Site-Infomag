@@ -2,98 +2,39 @@
 
 import HeaderPage from "@/components/ui/HeaderPage";
 import { Download, Loader2 } from "lucide-react";
-import { useCallback, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
 
-type GhRelease = {
-  assets?: Array<{
-    name?: string;
-    browser_download_url?: string;
-  }>;
-};
-
-const CACHE_KEY = "rustdesk_latest_x86_64_url_v1";
-const CACHE_TTL_MS = 6 * 60 * 60 * 1000;
-
-function getCachedUrl(): string | null {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
-
-    const parsed = JSON.parse(raw);
-    const age = Date.now() - parsed.ts;
-    if (age > CACHE_TTL_MS) return null;
-
-    return parsed.url;
-  } catch {
-    return null;
-  }
-}
-
-function setCachedUrl(url: string) {
-  localStorage.setItem(CACHE_KEY, JSON.stringify({ url, ts: Date.now() }));
-}
-
-async function fetchLatestRustDeskX64Exe(): Promise<string> {
-  const res = await fetch("https://api.github.com/repos/rustdesk/rustdesk/releases/latest");
-  if (!res.ok) throw new Error("Erro ao buscar release");
-
-  const data = (await res.json()) as GhRelease;
-
-  const asset = data.assets?.find(
-    (a) => typeof a?.name === "string" && a.name.endsWith("-x86_64.exe")
-  );
-
-  if (!asset?.browser_download_url) throw new Error("EXE não encontrado");
-  return asset.browser_download_url;
-}
+const FILE_URL = "/downloads/RustDesk-Infomag-Setup.exe";
 
 const Suporte = () => {
   const [loading, setLoading] = useState(false);
   const [showSteps, setShowSteps] = useState(false);
   const [showHint, setShowHint] = useState(false);
 
-  const fallbackUrl = useMemo(
-    () => "https://github.com/rustdesk/rustdesk/releases/latest",
-    []
-  );
-
-  // ✅ Fecha o balão depois de 5s
   useEffect(() => {
     if (!showHint) return;
-
-    const timer = setTimeout(() => {
-      setShowHint(false);
-    }, 5000);
-
+    const timer = setTimeout(() => setShowHint(false), 5000);
     return () => clearTimeout(timer);
   }, [showHint]);
 
-  const handleDownload = useCallback(async () => {
+  const handleDownload = useCallback(() => {
     if (loading) return;
 
     setLoading(true);
+    setShowSteps(true);
+    setShowHint(true);
 
-    try {
-      const cached = getCachedUrl();
-      let url = cached;
+    // inicia o download do arquivo do /public
+    const a = document.createElement("a");
+    a.href = FILE_URL;
+    a.download = "RustDesk-Infomag-Setup.exe"; // ajuda a forçar download
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-      if (!url) {
-        url = await fetchLatestRustDeskX64Exe();
-        setCachedUrl(url);
-      }
-
-      setShowSteps(true);
-      setShowHint(true);
-      window.location.href = url;
-    } catch {
-      window.open(fallbackUrl, "_blank");
-      setShowSteps(true);
-      setShowHint(true);
-    } finally {
-      setLoading(false);
-    }
-  }, [fallbackUrl, loading]);
+    setLoading(false);
+  }, [loading]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -106,12 +47,13 @@ const Suporte = () => {
           </h1>
 
           {showSteps ? (
-            <p
-              onClick={handleDownload}
+            <a
+              href={FILE_URL}
+              download="RustDesk-Infomag-Setup.exe"
               className="text-gray-100 text-center pt-2 underline hover:cursor-pointer"
             >
               Clique aqui caso o download não tenha iniciado
-            </p>
+            </a>
           ) : (
             <p className="text-gray-100 text-center pt-2">
               Aplicativo de Acesso Remoto destinado a clientes InfoMag
@@ -143,7 +85,7 @@ const Suporte = () => {
               </span>
             </button>
 
-            {/* ✅ Seta no canto superior direito (fecha sozinha em 5s) */}
+            {/* dica no canto */}
             {showHint && (
               <div className="fixed top-3 right-3 z-50 hidden md:block pointer-events-none">
                 <div className="relative">
