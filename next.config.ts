@@ -1,24 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export", // 👈 ESSENCIAL para gerar site estático
+  trailingSlash: true,
   images: {
+    unoptimized: true, // 👈 NECESSÁRIO para funcionar com export
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**'
-      }
-    ]
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/**",
+      },
+    ],
   },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ["@svgr/webpack"],
-    })
+    });
 
-    return config
+    return config;
   },
 };
 

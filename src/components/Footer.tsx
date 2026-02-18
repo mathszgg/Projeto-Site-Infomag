@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Logo from "./ui/Logo";
 import SocialNeworkBar from "./SocialNetworkBar";
-// Se você usar ícones, importe-os aqui. Ex: import { Facebook, Instagram } from 'lucide-react';
+import { NavegationPages } from "./ui/MenuBar";
 
 const Footer = () => {
     return (
@@ -27,10 +29,9 @@ const Footer = () => {
                         <h3 className="text-xl font-bold">Links Rápidos</h3>
                         <nav className="mt-4">
                             <ul className="space-y-2">
-                                <li className="list-disc list-inside"><Link href="/" className="hover:underline">Home</Link></li>
-                                <li className="list-disc list-inside"><Link href="/sobre" className="hover:underline">Sobre</Link></li>
-                                <li className="list-disc list-inside"><Link href="/contato" className="hover:underline">Contato</Link></li>
-                                {/* Adicione mais links se precisar */}
+                                {NavegationPages.map((a) => 
+                                    <li key={a.href} className="list-disc list-inside"><Link href={a.href} className="hover:underline">{a.label}</Link></li>
+                                )}
                             </ul>
                         </nav>
                     </div>
